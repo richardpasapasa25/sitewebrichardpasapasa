@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RICHARD PASAPASA – Designer Pro</title>
+
+    <style>
+        /* ====== GLOBAL ====== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            background: #f0f6ff;
+            color: #022044;
+        }
+
+        /* ====== COLORS & GRADIENTS ====== */
+        :root {
+            --blue1: #0a84ff;
+            --blue2: #0066ff;
+            --blue3: #0033aa;
+            --gradient: linear-gradient(135deg, #0a84ff, #0033aa);
+        }
+
+        /* ====== HEADER ====== */
+        header {
+            width: 100%;
+            padding: 20px 50px;
+            position: fixed;
+            top: 0;
+            background: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            z-index: 100;
+        }
+
+        header .logo {
+            font-size: 26px;
+            font-weight: bold;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: #022044;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav a:hover {
+            color: var(--blue1);
+        }
+
+        /* ====== HERO ====== */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(
+                rgba(0, 40, 100, 0.6),
+                rgba(0, 40, 100, 0.6)
+            ),
+            url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1500&q=80') center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            background: var(--gradient);
+            padding: 12px 28px;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+
+        /* ====== ABOUT ====== */
+        .about {
+            padding: 100px 50px;
+            text-align: center;
+        }
+
+        .about p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+
+        /* ====== PORTFOLIO ====== */
+        .portfolio {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .card img:hover {
+            transform: scale(1.05);
+        }
+
+        /* Upload Button */
+        .upload-box {
+            margin-top: 30px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ====== SERVICES ====== */
+        .services {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .service-list {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .serv {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            width: 300px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            border-top: 4px solid var(--blue1);
+        }
+
+        .serv:hover {
+            transform: translateY(-5px);
+        }
+
+        /* ====== ORDER FORM ====== */
+        .order {
+            padding: 80px 50px;
+            text-align: center;
+        }
+
+        .order-form {
+            max-width: 600px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-top: 6px solid var(--blue2);
+        }
+
+        .order-form label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: 600;
+        }
+
+        .order-form input, 
+        .order-form select,
+        .order-form textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        .order-form input:focus,
+        .order-form textarea:focus,
+        .order-form select:focus {
+            border-color: var(--blue1);
+        }
+
+        /* ====== CONTACTS ====== */
+        .contact-box {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #003366;
+        }
+
+        /* ====== FOOTER ====== */
+        footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--gradient);
+            color: white;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <div class="logo">RICHARD PASAPASA</div>
+        <nav>
+            <a href="#home">Accueil</a>
+            <a href="#about">À propos</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#services">Services</a>
+            <a href="#order">Commande</a>
+        </nav>
+    </header>
+
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+        <h1>Je suis RICHARD PASAPASA</h1>
+        <p>Designer professionnel — Logos, affiches, flyers, branding, social media design.</p>
+        <a href="#order" class="btn">Commander un Projet</a>
+    </section>
+
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="about">
+        <h2>À propos</h2>
+        <p>
+            Je suis un designer graphique passionné avec plusieurs années d’expérience.  
+            Mon objectif est d'aider les marques et entreprises à se démarquer grâce à des visuels modernes et professionnels.
+        </p>
+
+        <div class="contact-box">
+            📩 Email : <b>richardpasapasa5@gmail.com</b><br>
+            📞 Téléphone : <b>+243 977 612 630</b>
+        </div>
+    </section>
+
+    <!-- ================= PORTFOLIO ================= -->
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+
+        <div class="gallery" id="gallery">
+            <div class="card"><img src="images/oeuvre1.jpg" alt="Oeuvre 1"></div>
+            <div class="card"><img src="images/oeuvre2.jpg" alt="Oeuvre 2"></div>
+            <div class="card"><img src="images/oeuvre3.jpg" alt="Oeuvre 3"></div>
+            <div class="card"><img src="images/oeuvre4.jpg" alt="Oeuvre 4"></div>
+        </div>
+    </section>
+
+    <!-- ================= SERVICES --> ================= -->
+    <section id="services" class="services">
+        <h2>Services</h2>
+        <div class="service-list">
+            <div class="serv">
+                <h3>Logo professionnel</h3>
+                <p>Logo moderne, unique, livré en PNG, JPG, PDF et vectoriel.</p>
+            </div>
+            <div class="serv">
+                <h3>Affiches & Flyers</h3>
+                <p>Création d’affiches attractives pour vos événements.</p>
+            </div>
+            <div class="serv">
+                <h3>Design Réseaux Sociaux</h3>
+                <p>Posts, bannières, stories, couvertures professionnelles.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ================= ORDER FORM ================= -->
+    <section id="order" class="order">
+        <h2>Passer une Commande</h2>
+        
+        <form action="#" method="post" class="order-form">
+            <label>Nom complet</label>
+            <input type="text" required>
+
+            <label>Email</label>
+            <input type="email" required>
+
+            <label>Type de design</label>
+            <select required>
+                <option value="">Choisir…</option>
+                <option>Logo</option>
+                <option>Affiche / Flyer</option>
+                <option>Design Réseaux Sociaux</option>
+                <option>Carte de visite</option>
+                <option>Bannières</option>
+            </select>
+
+            <label>Description du projet</label>
+            <textarea rows="5" required></textarea>
+
+            <label>Budget (USD)</label>
+            <input type="number" min="1" required>
+
+            <label>Date de livraison souhaitée</label>
+            <input type="date" required>
+
+            <button type="submit" class="btn">Envoyer la Commande</button>
+        </form>
+
+        <div class="contact-box">
+            📩 Email : <b>richardpasapasa5@gmail.com</b>  
+            <br>📞 Téléphone : <b>+243 977 612 630</b>
+        </div>
+    </section>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        © 2025 – RICHARD PASAPASA | Designer Professionnel
+    </footer>
+
+    
+
+</body>
+</html>
